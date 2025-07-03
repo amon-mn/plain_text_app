@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PlainTextApp</string>
+    <string name="title_activity_preferences">Configurações</string>
+</resources>
