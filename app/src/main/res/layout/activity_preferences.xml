@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"> <!-- MUITO IMPORTANTE: Defina como TRUE no layout raiz -->
+
+    <!-- Toolbar tradicional para a AppBar -->
+    <!-- "?attr/actionBarSize" -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/preferences_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:titleTextColor="@android:color/black"
+        app:title="PlainText"
+        android:paddingTop="0dp" /> <!-- REMOVA QUALQUER PADDING TOP AQUI, deixe o sistema gerenciar -->
+
+    <!-- FragmentContainerView para hospedar o PreferenceFragmentCompat -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/preferences_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="br.edu.ufam.icomp.plaintextapp.activities.PreferencesActivity$PreferencesFragment" />
+
+</LinearLayout>

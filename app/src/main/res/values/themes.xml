@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.PlainTextApp" parent="android:Theme.Material.Light.NoActionBar" />
-    <style name="Theme.PlainTextApp.Preferences" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Base application theme. -->
+    <style name="Theme.PlainTextApp" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+
+    <!-- Theme for the PreferencesActivity -->
+    <!-- Este tema herda de um tema AppCompat -->
+    <style name="Theme.PlainTextApp.Preferences" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Garante que não haja ActionBar padrão e remove o título da janela -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- Define a cor da barra de status como branca e garante ícones escuros -->
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- REMOVA QUALQUER LINHA COMO:
+             <item name="android:windowTranslucentStatus">true</item>
+             <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+             Essas podem causar problemas quando combinadas com fitsSystemWindows. -->
+    </style>
+
 </resources>
