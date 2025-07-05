@@ -53,6 +53,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.preference.ktx)
     implementation(libs.androidx.savedstate.ktx)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.material)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

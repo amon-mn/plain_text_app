@@ -23,4 +23,12 @@
              Essas podem causar problemas quando combinadas com fitsSystemWindows. -->
     </style>
 
+    <style name="Theme.PlainTextApp.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- Opcional: Cores da barra de status se você quiser que ela seja transparente ou tenha cor específica -->
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
 </resources>

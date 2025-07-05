@@ -1,6 +1,8 @@
 package br.edu.ufam.icomp.plaintextapp.ui.screens.login
 
-import android.widget.Toast // Importe Toast para mensagens
+import android.content.Intent // Importe Intent
+import android.content.SharedPreferences
+import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -11,27 +13,22 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.preference.PreferenceManager // Importe PreferenceManager
-import androidx.compose.ui.platform.LocalContext // Importe LocalContext
+import androidx.preference.PreferenceManager
+import androidx.compose.ui.platform.LocalContext
 
 import br.edu.ufam.icomp.plaintextapp.ui.navigation.AppRoutes
+import br.edu.ufam.icomp.plaintextapp.activities.ListActivity // Importe ListActivity
+
 
 @Composable
 fun LoginForm(navController: NavController) {
-    val context = LocalContext.current // Obtenha o Context para acessar SharedPreferences e mostrar Toast
-
-    // Obtenha as SharedPreferences
+    val context = LocalContext.current
     val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
-    // Variáveis de estado para os campos de texto
     var loginText by remember { mutableStateOf("") }
     var passwordText by remember { mutableStateOf("") }
-    var saveLoginInfo by remember { mutableStateOf(false) } // Estado do checkbox
+    var saveLoginInfo by remember { mutableStateOf(false) }
 
-    // Carregar preferências ao iniciar o Composable
-    // O LaunchedEffect é usado para executar efeitos colaterais (como carregar dados)
-    // quando o Composable entra na composição ou uma de suas chaves muda.
-    // Unit como chave significa que ele será executado apenas uma vez.
     LaunchedEffect(Unit) {
         val prefLogin = sharedPreferences.getString("login", "") ?: ""
         val prefPassword = sharedPreferences.getString("password", "") ?: ""
@@ -40,10 +37,9 @@ fun LoginForm(navController: NavController) {
         if (rememberLoginPref) {
             loginText = prefLogin
             passwordText = prefPassword
-            saveLoginInfo = true // Marcar o checkbox se "remember_login" for true
+            saveLoginInfo = true
         }
     }
-
 
     Column(
         modifier = Modifier
@@ -101,22 +97,17 @@ fun LoginForm(navController: NavController) {
         // Botão "Enviar"
         Button(
             onClick = {
-                // Obtenha os valores de login e senha salvos nas preferências
                 val savedLogin = sharedPreferences.getString("login", "") ?: ""
                 val savedPassword = sharedPreferences.getString("password", "") ?: ""
 
-                // Lógica de validação do login
                 if (loginText == savedLogin && passwordText == savedPassword) {
-                    // Login bem-sucedido: Salvar/Atualizar preferências e navegar
                     if (saveLoginInfo) {
-                        // Salva as credenciais atuais nas preferências
                         sharedPreferences.edit()
                             .putString("login", loginText)
                             .putString("password", passwordText)
-                            .putBoolean("remember_login", true) // Marca para lembrar
-                            .apply() // Aplica as mudanças assincronamente
+                            .putBoolean("remember_login", true)
+                            .apply()
                     } else {
-                        // Se o checkbox não estiver marcado, remove as credenciais salvas
                         sharedPreferences.edit()
                             .remove("login")
                             .remove("password")
@@ -124,10 +115,14 @@ fun LoginForm(navController: NavController) {
                             .apply()
                     }
 
-                    val nameToPass = loginText.ifEmpty { "Usuário" }
-                    navController.navigate(AppRoutes.createHelloRoute(nameToPass))
+                    // --- MUDANÇA AQUI: Inicia ListActivity com Intent ---
+                    val intent = Intent(context, ListActivity::class.java)
+                    // Opcional: Se quiser passar o login para a ListActivity
+                    intent.putExtra("login", loginText)
+                    context.startActivity(intent)
+                    // --- FIM DA MUDANÇA ---
+
                 } else {
-                    // Login/senha inválidos: Mostra uma mensagem Toast
                     Toast.makeText(context, "Login/senha inválidos!", Toast.LENGTH_SHORT).show()
                 }
             },
