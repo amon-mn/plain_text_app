@@ -42,8 +42,9 @@ Para configurar e executar o projeto localmente, siga estes passos:
 
 Clone o repositório:
 
+``` git
 git clone https://github.com/SeuUsuario/NomeDoSeuRepositorio.git
-
+```
 
 (Substitua SeuUsuario pelo seu nome de usuário do GitHub e NomeDoSeuRepositorio pelo nome que você deu ao seu repositório.)
 
