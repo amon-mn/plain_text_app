@@ -1,6 +1,8 @@
-package br.edu.ufam.icomp.plaintextapp.ui.screens.login // <-- SEU PACOTE
+package br.edu.ufam.icomp.plaintextapp.ui.screens.login
 
+import android.content.Context
 import android.content.Intent
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.DropdownMenu
@@ -16,22 +18,38 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
+
 import br.edu.ufam.icomp.plaintextapp.activities.PreferencesActivity
+import androidx.compose.material3.MaterialTheme // <-- IMPORTANTE: Importe MaterialTheme
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
 fun MyAppBar() {
     var expanded by remember { mutableStateOf(false) }
-    val context = LocalContext.current // Obtenha o Context aqui
+    val context = LocalContext.current
 
     TopAppBar(
-        title = { Text("PlainText") },
-        colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.White),
+        title = {
+            Text(
+                "PlainText",
+                color = MaterialTheme.colorScheme.onSurface // <-- Cor do texto do tema
+            )
+        },
+        // ESTA CHAMADA ESTÁ CORRETA PARA MATERIAL 3
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.surface // <-- Cor de fundo da AppBar do tema
+        ),
         actions = {
             IconButton(onClick = { expanded = true }) {
-                Icon(Icons.Default.MoreVert, contentDescription = "Menu")
+                Icon(
+                    Icons.Filled.MoreVert,
+                    contentDescription = "Menu",
+                    tint = MaterialTheme.colorScheme.onSurface // <-- Cor do ícone do menu do tema
+                )
             }
 
             DropdownMenu(
@@ -39,20 +57,16 @@ fun MyAppBar() {
                 onDismissRequest = { expanded = false }
             ) {
                 DropdownMenuItem(
-                    text = { Text("Configurações") },
+                    text = { Text("Configurações", color = MaterialTheme.colorScheme.onSurface) }, // Cor do texto do item
                     onClick = {
-                        // Inicia a PreferencesActivity
                         val intent = Intent(context, PreferencesActivity::class.java)
                         context.startActivity(intent)
-                        expanded = false // Fecha o menu após o clique
+                        expanded = false
                     }
                 )
                 DropdownMenuItem(
-                    text = { Text("Sobre") },
+                    text = { Text("Sobre", color = MaterialTheme.colorScheme.onSurface) }, // Cor do texto do item
                     onClick = {
-                        // Lógica para Sobre (ex: mostrar um diálogo simples)
-                        // Para um diálogo simples em Compose, não precisaríamos de uma Activity separada.
-                        // Por enquanto, apenas fechar o menu.
                         expanded = false
                     }
                 )

@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -15,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel // Importe viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -22,11 +24,12 @@ import androidx.navigation.NavType
 import androidx.navigation.navArgument
 
 import br.edu.ufam.icomp.plaintextapp.ui.screens.login.MyAppBar
+import br.edu.ufam.icomp.plaintextapp.ui.screens.login.LoginScreenContent // Importe LoginScreenContent
 import br.edu.ufam.icomp.plaintextapp.ui.theme.PlainTextAppTheme
 
 import br.edu.ufam.icomp.plaintextapp.ui.navigation.AppRoutes
 import br.edu.ufam.icomp.plaintextapp.ui.screens.hello.HelloScreen
-import br.edu.ufam.icomp.plaintextapp.ui.screens.login.LoginScreenContent
+import br.edu.ufam.icomp.plaintextapp.viewmodel.LoginViewModel // Importe LoginViewModel
 
 
 class MainActivity : ComponentActivity() {
@@ -40,7 +43,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val navController = rememberNavController() // NavController aqui
+                    val navController = rememberNavController()
 
                     Scaffold(
                         topBar = {
@@ -54,11 +57,13 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier
                                 .fillMaxSize()
                                 .padding(innerPadding)
-                                .background(Color.White)
+                                // MUITO IMPORTANTE: Use a cor de fundo do tema, não hardcoded!
+                                .background(MaterialTheme.colorScheme.background)
                         ) {
                             composable(AppRoutes.LOGIN_SCREEN) {
-                                // CHAMA AGORA LoginScreenContent e passa o navController
-                                LoginScreenContent(navController = navController)
+                                val loginViewModel: LoginViewModel = viewModel() // Cria/obtém a ViewModel aqui
+                                // CHAMA AGORA LoginScreenContent e passa o navController e a ViewModel
+                                LoginScreenContent(navController = navController, loginViewModel = loginViewModel)
                             }
 
                             composable(
@@ -84,8 +89,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun PreviewUI() {
     PlainTextAppTheme {
-        // Chame o preview completo da sua tela de login para ver o resultado aqui
-        // (este Preview já contém o Scaffold e a MyAppBar para simular a Main Activity)
+        // O PreviewFullLoginScreen já usa viewModel() internamente
         br.edu.ufam.icomp.plaintextapp.ui.screens.login.PreviewFullLoginScreen()
     }
 }

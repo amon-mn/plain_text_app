@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores padrão do Android Studio (se existirem ou forem usadas) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Suas cores de marca para AppCompat (Modo Escuro) -->
+    <color name="app_green">#8BC34A</color>
+    <color name="app_blue">#4A689B</color>
+
+    <!-- Cores específicas para a AppBar e textos no modo escuro -->
+    <color name="appbar_background_dark">#FF1E1E1E</color>
+    <color name="appbar_text_dark">#FFFFFFFF</color>
+
+    <!-- ADICIONADO: Cor verde para a AppBar no modo escuro -->
+    <color name="appbar_background_dark_green">#a1c639</color>
+</resources>

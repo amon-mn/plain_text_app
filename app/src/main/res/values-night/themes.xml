@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme para ListActivity e EditActivity (Modo Escuro) -->
+    <style name="Theme.PlainTextApp.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- Cor da barra de status no modo escuro (VERDE) -->
+        <item name="android:statusBarColor">@color/appbar_background_dark_green</item>
+        <!-- Ícones claros na barra de status em fundo escuro -->
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Cores para a Toolbar e outros componentes AppCompat no modo escuro -->
+        <item name="colorPrimary">@color/app_blue</item>
+        <item type="color" name="colorSurface">@color/appbar_background_dark_green</item> <!-- Fundo da Toolbar no modo escuro (VERDE) -->
+        <item type="color" name="colorOnSurface">@color/appbar_text_dark</item>     <!-- Cor do texto sobre a Toolbar no modo escuro -->
+    </style>
+
+    <!-- Theme para PreferencesActivity (Modo Escuro) -->
+    <style name="Theme.PlainTextApp.Preferences" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- Cor da barra de status no modo escuro (VERDE) -->
+        <item name="android:statusBarColor">@color/appbar_background_dark_green</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Cores para a Toolbar e outros componentes AppCompat no modo escuro -->
+        <item name="colorPrimary">@color/app_blue</item>
+        <item type="color" name="colorSurface">@color/appbar_background_dark_green</item> <!-- Fundo da Toolbar no modo escuro (VERDE) -->
+        <item type="color" name="colorOnSurface">@color/appbar_text_dark</item>
+    </style>
+</resources>

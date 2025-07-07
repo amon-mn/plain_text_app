@@ -10,23 +10,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavController // Importe NavController
-import androidx.navigation.compose.rememberNavController // Importe rememberNavController (para previews)
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
-import br.edu.ufam.icomp.plaintextapp.ui.theme.PlainTextAppTheme // <-- SEU TEMA DE APP
+import br.edu.ufam.icomp.plaintextapp.ui.theme.PlainTextAppTheme
+import br.edu.ufam.icomp.plaintextapp.viewmodel.LoginViewModel
+
+import androidx.compose.material3.MaterialTheme // <-- IMPORTANTE: Importe MaterialTheme
 
 
-// Esta função representa APENAS o conteúdo da tela, sem a Top Bar
-// Agora ela recebe o navController, que será passado da MainActivity
 @Composable
-fun LoginScreenContent(navController: NavController) { // <-- AGORA RECEBE NAVCONTROLLER
+fun LoginScreenContent(navController: NavController, loginViewModel: LoginViewModel) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White)
+            // MUITO IMPORTANTE: Use a cor de fundo da superfície do tema
+            .background(MaterialTheme.colorScheme.surface)
     ) {
-        GreenHeader()
-        LoginForm(navController = navController) // <-- PASSA O NAVCONTROLLER PARA LoginForm
+        GreenHeader() // O GreenHeader manterá suas cores específicas (branding)
+        LoginForm(navController = navController, loginViewModel = loginViewModel)
     }
 }
 
@@ -35,8 +38,8 @@ fun LoginScreenContent(navController: NavController) { // <-- AGORA RECEBE NAVCO
 @Composable
 fun PreviewLoginScreenContent() {
     PlainTextAppTheme {
-        // Para o preview, criamos um navController de "mentira"
-        LoginScreenContent(navController = rememberNavController())
+        // Para o preview, criamos um navController de "mentira" e uma ViewModel
+        LoginScreenContent(navController = rememberNavController(), loginViewModel = viewModel())
     }
 }
 
@@ -46,8 +49,9 @@ fun PreviewLoginScreenContent() {
 @Composable
 fun PreviewFullLoginScreen() {
     PlainTextAppTheme {
-        // Para o preview, criamos um navController de "mentira"
+        // Para o preview, criamos um navController de "mentira" e uma ViewModel
         val navController = rememberNavController()
+        val loginViewModel: LoginViewModel = viewModel() // Cria/obtém a ViewModel para o preview
         Scaffold(
             topBar = { MyAppBar() }
         ) { paddingValues ->
@@ -58,8 +62,8 @@ fun PreviewFullLoginScreen() {
                     .background(Color.White)
             ) {
                 // O PreviewFullLoginScreen agora chama LoginScreenContent
-                // e passa o navController para ele
-                LoginScreenContent(navController = navController)
+                // e passa o navController e a ViewModel para ele
+                LoginScreenContent(navController = navController, loginViewModel = loginViewModel)
             }
         }
     }

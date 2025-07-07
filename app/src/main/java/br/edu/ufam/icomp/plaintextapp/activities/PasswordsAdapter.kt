@@ -6,33 +6,28 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ufam.icomp.plaintextapp.R
-import br.edu.ufam.icomp.plaintextapp.dao.PasswordDAO
-import br.edu.ufam.icomp.plaintextapp.model.Password
+import br.edu.ufam.icomp.plaintextapp.model.Password // Importe Password
 import kotlin.collections.ArrayList
 
-class PasswordsAdapter(private val context: Context) :
-    RecyclerView.Adapter<PasswordsViewHolder>() {
+// O Adapter agora recebe um callback de clique
+class PasswordsAdapter(
+    private val context: Context,
+    private val onItemClick: (Int) -> Unit // Callback para o clique do item
+) : RecyclerView.Adapter<PasswordsViewHolder>() {
 
-    // CORREÇÃO AQUI: Inicialize a propriedade 'passwords'
-    private var passwords: ArrayList<Password> = ArrayList() // <-- ADICIONE = ArrayList()
-    // Ou, se você quiser garantir que ela seja inicializada pelo DAO logo de cara,
-    // pode fazer: private var passwords: ArrayList<Password> = passwordDAO.getList()
-    // Mas a forma mais segura é inicializar vazia e depois chamar update().
+    private var passwords: List<Password> = ArrayList() // Agora é uma List (imutável)
 
-    private val passwordDAO: PasswordDAO = PasswordDAO(context)
-
-    init {
-        update() // Carrega os dados iniciais do DAO
-    }
-
-    fun update() {
-        passwords = passwordDAO.getList()
+    // Novo metodo para atualizar os dados do adapter
+    fun updateData(newPasswords: List<Password>) {
+        this.passwords = newPasswords
+        notifyDataSetChanged() // Notifica o RecyclerView sobre as mudanças
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PasswordsViewHolder {
         val v = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item, parent, false) as ConstraintLayout
-        return PasswordsViewHolder(v, context)
+        // Passa o callback para o ViewHolder
+        return PasswordsViewHolder(v, context, onItemClick)
     }
 
     override fun onBindViewHolder(holder: PasswordsViewHolder, position: Int) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Cores padrão do Android Studio (se existirem ou forem usadas) -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +8,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Suas cores de marca para AppCompat (Modo Claro) -->
+    <color name="app_green">#8BC34A</color>
+    <color name="app_blue">#4A689B</color>
+
+    <!-- Cores específicas para a AppBar e textos no modo claro -->
+    <color name="appbar_background_light">#FFFFFFFF</color>
+    <color name="appbar_text_light">#FF000000</color>
+
+    <!-- ADICIONE ESTAS LINHAS: Cores do modo escuro com valores padrão para a base -->
+    <color name="appbar_background_dark">#FF1E1E1E</color> <!-- Pode ser qualquer cor, mas é o valor padrão -->
+    <color name="appbar_text_dark">#FFFFFFFF</color>     <!-- Pode ser qualquer cor, mas é o valor padrão -->
+    <color name="appbar_background_dark_green">#8BC34A</color>
 </resources>
