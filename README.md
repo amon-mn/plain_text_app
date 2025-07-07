@@ -1,9 +1,9 @@
-PlainText App
+# PlainText App
 
-🚀 Visão Geral
+## 🚀 Visão Geral
 Este é PlainText App, um aplicativo móvel desenvolvido em Android Studio que simula um gerenciador de senhas simples e foca na interface de usuário, navegação entre telas e persistência de dados de login através de preferências. Ele foi criado para demonstrar conceitos fundamentais de desenvolvimento Android moderno com Jetpack Compose, incluindo navegação e gerenciamento de configurações de usuário.
 
-✨ Funcionalidades
+## ✨ Funcionalidades
 
 Interface de usuário intuitiva e responsiva construída com Jetpack Compose.
 
@@ -19,7 +19,7 @@ Opção de preenchimento automático dos campos de login na inicialização, bas
 
 Validação de login e senha utilizando as credenciais configuradas nas preferências.
 
-🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 Linguagem de Programação: Kotlin
 
@@ -37,13 +37,14 @@ Material Design 3 (para componentes de UI modernos)
 
 Ferramentas de Build: Gradle
 
-⚙️ Instalação e Execução
+## ⚙️ Instalação e Execução
 Para configurar e executar o projeto localmente, siga estes passos:
 
 Clone o repositório:
 
+``` git
 git clone https://github.com/SeuUsuario/NomeDoSeuRepositorio.git
-
+```
 
 (Substitua SeuUsuario pelo seu nome de usuário do GitHub e NomeDoSeuRepositorio pelo nome que você deu ao seu repositório.)
 
@@ -61,7 +62,7 @@ Selecione um emulador Android ou conecte um dispositivo físico.
 
 Clique no botão Run (o ícone de 'Play' verde) na barra de ferramentas do Android Studio.
 
-📚 Como Usar
+## 📚 Como Usar
 Após a instalação, o aplicativo abrirá na tela de login.
 
 Configurar Credenciais: Para definir o login e a senha, clique no ícone de três pontos verticais (menu) na AppBar superior e selecione "Configurações".
@@ -74,7 +75,7 @@ Realizar Login: Digite o login e a senha que você configurou. Opcionalmente, ma
 
 Clique no botão "ENVIAR". Se as credenciais estiverem corretas, você será direcionado para a tela de boas-vindas com o nome de usuário.
 
-🤝 Contribuição
+## 🤝 Contribuição
 Contribuições são bem-vindas! Se você quiser contribuir com este projeto, por favor, siga estas diretrizes:
 
 Faça um fork do repositório.
@@ -87,11 +88,11 @@ Envie suas alterações para o seu fork (git push origin feature/sua-feature).
 
 Abra um Pull Request detalhando suas mudanças.
 
-🐛 Issues e Suporte
+## 🐛 Issues e Suporte
 Se você encontrar algum problema ou tiver sugestões, por favor, abra uma Issue neste repositório.
 
-📝 Licença
+## 📝 Licença
 Este projeto está licenciado sob a licença MIT License - veja o arquivo LICENSE.md para mais detalhes.
 
-🧑‍💻 Autor
+## 🧑‍💻 Autor
 Amon Menezes Negreiros - https://github.com/amon-mn
