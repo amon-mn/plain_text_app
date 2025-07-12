@@ -6,28 +6,27 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ufam.icomp.plaintextapp.R
-import br.edu.ufam.icomp.plaintextapp.model.Password // Importe Password
+import br.edu.ufam.icomp.plaintextapp.model.Password
 import kotlin.collections.ArrayList
 
-// O Adapter agora recebe um callback de clique
 class PasswordsAdapter(
     private val context: Context,
-    private val onItemClick: (Int) -> Unit // Callback para o clique do item
+    private val onItemClick: (Int) -> Unit,
+    private val onItemLongClick: (Int) -> Unit // NOVO: Callback para clique longo
 ) : RecyclerView.Adapter<PasswordsViewHolder>() {
 
-    private var passwords: List<Password> = ArrayList() // Agora é uma List (imutável)
+    private var passwords: List<Password> = ArrayList()
 
-    // Novo metodo para atualizar os dados do adapter
     fun updateData(newPasswords: List<Password>) {
         this.passwords = newPasswords
-        notifyDataSetChanged() // Notifica o RecyclerView sobre as mudanças
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PasswordsViewHolder {
         val v = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item, parent, false) as ConstraintLayout
-        // Passa o callback para o ViewHolder
-        return PasswordsViewHolder(v, context, onItemClick)
+        // Passa ambos os callbacks para o ViewHolder
+        return PasswordsViewHolder(v, context, onItemClick, onItemLongClick)
     }
 
     override fun onBindViewHolder(holder: PasswordsViewHolder, position: Int) {
