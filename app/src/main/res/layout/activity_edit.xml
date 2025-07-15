@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.EditActivity"
+    tools:context=".presentation.activities.EditActivity"
     android:fitsSystemWindows="true"> <!-- Adicionado para lidar com a barra de status -->
 
     <!-- Título da Tela (AppBar personalizada simples) -->

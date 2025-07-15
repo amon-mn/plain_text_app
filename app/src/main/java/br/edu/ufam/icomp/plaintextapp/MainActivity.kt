@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -14,7 +13,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel // Importe viewModel
 import androidx.navigation.compose.NavHost
@@ -23,12 +21,13 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
 
-import br.edu.ufam.icomp.plaintextapp.ui.screens.login.MyAppBar
-import br.edu.ufam.icomp.plaintextapp.ui.screens.login.LoginScreenContent // Importe LoginScreenContent
-import br.edu.ufam.icomp.plaintextapp.ui.theme.PlainTextAppTheme
+import br.edu.ufam.icomp.plaintextapp.presentation.ui.screens.login.MyAppBar
+import br.edu.ufam.icomp.plaintextapp.presentation.ui.screens.login.LoginScreenContent // Importe LoginScreenContent
+import br.edu.ufam.icomp.plaintextapp.presentation.ui.theme.PlainTextAppTheme
 
-import br.edu.ufam.icomp.plaintextapp.ui.navigation.AppRoutes
-import br.edu.ufam.icomp.plaintextapp.ui.screens.hello.HelloScreen
+import br.edu.ufam.icomp.plaintextapp.presentation.ui.navigation.AppRoutes
+import br.edu.ufam.icomp.plaintextapp.presentation.ui.screens.login.PreviewFullLoginScreen
+import br.edu.ufam.icomp.plaintextapp.presentation.ui.screens.hello.HelloScreen
 import br.edu.ufam.icomp.plaintextapp.viewmodel.LoginViewModel // Importe LoginViewModel
 
 
@@ -90,6 +89,6 @@ class MainActivity : ComponentActivity() {
 fun PreviewUI() {
     PlainTextAppTheme {
         // O PreviewFullLoginScreen já usa viewModel() internamente
-        br.edu.ufam.icomp.plaintextapp.ui.screens.login.PreviewFullLoginScreen()
+        PreviewFullLoginScreen()
     }
 }

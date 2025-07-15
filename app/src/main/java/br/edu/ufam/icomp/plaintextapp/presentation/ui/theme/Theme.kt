@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.ui.theme
+package br.edu.ufam.icomp.plaintextapp.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

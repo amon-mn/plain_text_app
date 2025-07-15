@@ -1,6 +1,6 @@
 package br.edu.ufam.icomp.plaintextapp.domain.repository // <-- SEU PACOTE
 
-import br.edu.ufam.icomp.plaintextapp.model.Password
+import br.edu.ufam.icomp.plaintextapp.domain.entities.model.Password
 import kotlinx.coroutines.flow.Flow // Importe Flow
 
 // Interface que define as operações de dados para senhas

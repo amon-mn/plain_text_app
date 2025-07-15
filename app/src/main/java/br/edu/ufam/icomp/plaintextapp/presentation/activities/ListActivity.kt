@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.activities
+package br.edu.ufam.icomp.plaintextapp.presentation.activities
 
 import android.content.DialogInterface
 import android.content.Intent
@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import br.edu.ufam.icomp.plaintextapp.R
-import br.edu.ufam.icomp.plaintextapp.activities.PreferencesActivity
 import br.edu.ufam.icomp.plaintextapp.viewmodel.PasswordListViewModel
 import kotlinx.coroutines.launch
 

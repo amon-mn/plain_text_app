@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.ui.theme
+package br.edu.ufam.icomp.plaintextapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

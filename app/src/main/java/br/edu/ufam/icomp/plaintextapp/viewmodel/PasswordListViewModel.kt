@@ -8,7 +8,7 @@ import br.edu.ufam.icomp.plaintextapp.domain.repository.PasswordRepository // Im
 import br.edu.ufam.icomp.plaintextapp.data.repository.PasswordRepositoryImpl // Importe PasswordRepositoryImpl
 import br.edu.ufam.icomp.plaintextapp.domain.usecase.GetPasswordsUseCase // Importe GetPasswordsUseCase
 import br.edu.ufam.icomp.plaintextapp.domain.usecase.DeletePasswordUseCase // Importe DeletePasswordUseCase
-import br.edu.ufam.icomp.plaintextapp.model.Password
+import br.edu.ufam.icomp.plaintextapp.domain.entities.model.Password
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch // Importe catch

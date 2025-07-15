@@ -1,8 +1,6 @@
-package br.edu.ufam.icomp.plaintextapp.ui.screens.login
+package br.edu.ufam.icomp.plaintextapp.presentation.ui.screens.login
 
-import android.content.Context
 import android.content.Intent
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.DropdownMenu
@@ -18,12 +16,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
 
-import br.edu.ufam.icomp.plaintextapp.activities.PreferencesActivity
+import br.edu.ufam.icomp.plaintextapp.presentation.activities.PreferencesActivity
 import androidx.compose.material3.MaterialTheme // <-- IMPORTANTE: Importe MaterialTheme
 
 @Composable

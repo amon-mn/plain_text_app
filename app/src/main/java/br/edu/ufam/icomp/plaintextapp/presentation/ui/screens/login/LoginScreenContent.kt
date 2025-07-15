@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.ui.screens.login
+package br.edu.ufam.icomp.plaintextapp.presentation.ui.screens.login
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -14,7 +14,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
-import br.edu.ufam.icomp.plaintextapp.ui.theme.PlainTextAppTheme
+import br.edu.ufam.icomp.plaintextapp.presentation.ui.theme.PlainTextAppTheme
 import br.edu.ufam.icomp.plaintextapp.viewmodel.LoginViewModel
 
 import androidx.compose.material3.MaterialTheme // <-- IMPORTANTE: Importe MaterialTheme

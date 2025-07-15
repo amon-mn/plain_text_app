@@ -1,10 +1,11 @@
-package br.edu.ufam.icomp.plaintextapp.activities
+package br.edu.ufam.icomp.plaintextapp.presentation.activities
 
 import android.content.Context
 import android.view.View
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import br.edu.ufam.icomp.plaintextapp.R
 
 class PasswordsViewHolder(
     v: ConstraintLayout,
@@ -13,8 +14,8 @@ class PasswordsViewHolder(
     private val onItemLongClick: (Int) -> Unit // NOVO: Callback para clique longo
 ) : RecyclerView.ViewHolder(v), View.OnClickListener, View.OnLongClickListener { // Implementa OnLongClickListener
 
-    var login: TextView = v.findViewById(br.edu.ufam.icomp.plaintextapp.R.id.itemLogin)
-    var name: TextView = v.findViewById(br.edu.ufam.icomp.plaintextapp.R.id.itemName)
+    var login: TextView = v.findViewById(R.id.itemLogin)
+    var name: TextView = v.findViewById(R.id.itemName)
     var id: Int = 0
 
     init {

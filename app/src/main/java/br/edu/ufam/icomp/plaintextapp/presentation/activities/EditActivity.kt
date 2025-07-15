@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.activities
+package br.edu.ufam.icomp.plaintextapp.presentation.activities
 
 import android.os.Bundle
 import android.view.View

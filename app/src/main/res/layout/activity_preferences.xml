@@ -22,6 +22,6 @@
         android:id="@+id/preferences_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="br.edu.ufam.icomp.plaintextapp.activities.PreferencesActivity$PreferencesFragment" />
+        android:name="br.edu.ufam.icomp.plaintextapp.presentation.activities.PreferencesActivity$PreferencesFragment" />
 
 </LinearLayout>

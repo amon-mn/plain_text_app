@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.ui.navigation
+package br.edu.ufam.icomp.plaintextapp.presentation.ui.navigation
 
 // Objeto para centralizar as rotas da aplicação
 object AppRoutes {

@@ -3,7 +3,7 @@ package br.edu.ufam.icomp.plaintextapp.data.repository // <-- SEU PACOTE
 
 import br.edu.ufam.icomp.plaintextapp.data.datasource.local.dao.MyPasswordDAO
 import br.edu.ufam.icomp.plaintextapp.domain.repository.PasswordRepository // Importe a interface
-import br.edu.ufam.icomp.plaintextapp.model.Password
+import br.edu.ufam.icomp.plaintextapp.domain.entities.model.Password
 import kotlinx.coroutines.Dispatchers // Importe Dispatchers
 import kotlinx.coroutines.flow.Flow // Importe Flow
 import kotlinx.coroutines.flow.flow // Importe flow builder

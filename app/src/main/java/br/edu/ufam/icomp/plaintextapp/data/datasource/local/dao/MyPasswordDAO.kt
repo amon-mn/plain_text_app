@@ -6,7 +6,7 @@ import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.widget.Toast
 import br.edu.ufam.icomp.plaintextapp.database.Database
-import br.edu.ufam.icomp.plaintextapp.model.Password
+import br.edu.ufam.icomp.plaintextapp.domain.entities.model.Password
 import kotlinx.coroutines.Dispatchers // Importe Dispatchers
 import kotlinx.coroutines.withContext // Importe withContext
 

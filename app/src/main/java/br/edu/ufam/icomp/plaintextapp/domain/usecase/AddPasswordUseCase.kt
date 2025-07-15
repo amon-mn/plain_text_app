@@ -1,7 +1,7 @@
 package br.edu.ufam.icomp.plaintextapp.domain.usecase
 
 import br.edu.ufam.icomp.plaintextapp.domain.repository.PasswordRepository
-import br.edu.ufam.icomp.plaintextapp.model.Password
+import br.edu.ufam.icomp.plaintextapp.domain.entities.model.Password
 
 class AddPasswordUseCase(private val repository: PasswordRepository) {
     suspend operator fun invoke(password: Password): Boolean {

@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.model // <-- SEU PACOTE
+package br.edu.ufam.icomp.plaintextapp.domain.entities.model // <-- SEU PACOTE
 
 data class Password(
     var id: Int, // id: identificador (inteiro) da senha

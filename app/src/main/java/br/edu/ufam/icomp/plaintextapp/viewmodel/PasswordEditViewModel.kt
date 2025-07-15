@@ -10,7 +10,7 @@ import br.edu.ufam.icomp.plaintextapp.data.repository.PasswordRepositoryImpl
 import br.edu.ufam.icomp.plaintextapp.domain.usecase.AddPasswordUseCase // Importe AddPasswordUseCase
 import br.edu.ufam.icomp.plaintextapp.domain.usecase.UpdatePasswordUseCase // Importe UpdatePasswordUseCase
 import br.edu.ufam.icomp.plaintextapp.domain.usecase.GetPasswordByIdUseCase // Importe GetPasswordByIdUseCase
-import br.edu.ufam.icomp.plaintextapp.model.Password
+import br.edu.ufam.icomp.plaintextapp.domain.entities.model.Password
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

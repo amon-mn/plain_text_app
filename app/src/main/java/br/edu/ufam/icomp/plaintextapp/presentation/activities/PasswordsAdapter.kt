@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.activities
+package br.edu.ufam.icomp.plaintextapp.presentation.activities
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,7 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ufam.icomp.plaintextapp.R
-import br.edu.ufam.icomp.plaintextapp.model.Password
-import kotlin.collections.ArrayList
+import br.edu.ufam.icomp.plaintextapp.domain.entities.model.Password
 
 class PasswordsAdapter(
     private val context: Context,

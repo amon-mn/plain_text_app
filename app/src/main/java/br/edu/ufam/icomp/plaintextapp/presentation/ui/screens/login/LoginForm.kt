@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.ui.screens.login
+package br.edu.ufam.icomp.plaintextapp.presentation.ui.screens.login
 
 import android.content.Intent
 import android.widget.Toast
@@ -7,17 +7,14 @@ import androidx.compose.material3.* // Importe TUDO do material3
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import androidx.preference.PreferenceManager
-import br.edu.ufam.icomp.plaintextapp.activities.ListActivity
+import br.edu.ufam.icomp.plaintextapp.presentation.activities.ListActivity
 import br.edu.ufam.icomp.plaintextapp.viewmodel.LoginViewModel
-import br.edu.ufam.icomp.plaintextapp.viewmodel.LoginUiState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextFieldDefaults // Importe OutlinedTextFieldDefaults
 

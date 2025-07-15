@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.ui.screens.login
+package br.edu.ufam.icomp.plaintextapp.presentation.ui.screens.login
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

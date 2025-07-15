@@ -1,4 +1,4 @@
-package br.edu.ufam.icomp.plaintextapp.ui.screens.hello
+package br.edu.ufam.icomp.plaintextapp.presentation.ui.screens.hello
 
 
 
@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.edu.ufam.icomp.plaintextapp.ui.theme.PlainTextAppTheme
+import br.edu.ufam.icomp.plaintextapp.presentation.ui.theme.PlainTextAppTheme
 
 @Composable
 fun HelloScreen(name: String, modifier: Modifier = Modifier) {
